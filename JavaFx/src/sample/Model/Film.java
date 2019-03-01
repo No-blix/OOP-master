@@ -1,11 +1,9 @@
 package sample.Model;
 
-import java.util.ArrayList;
-
 public class Film extends Produksjon implements Comparable<Film>{
 
 
-    public Film(String tittel, double spilleTid, String beskrivelse, String utgivelsesDato, Person regisør) {
+    public Film(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, String regisør) {
         super(tittel, spilleTid, beskrivelse, utgivelsesDato, regisør);
     }
 
