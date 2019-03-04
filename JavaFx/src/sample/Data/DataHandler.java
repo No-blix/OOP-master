@@ -2,6 +2,7 @@ package sample.Data;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
+import javafx.scene.control.TableView;
 import sample.Model.Film;
 
 import java.util.Random;
@@ -20,18 +21,18 @@ public class DataHandler {
         }
 
 
-        private static void genererFilmData() {
+        private static ObservableList<Film> genererFilmData() {
 
-            Random ranNum = new Random();
 
-            double random = ranNum.nextInt(20) + 30;
+            filmListe.add(new Film("ShawHank Redemtion (1995)", "142 min", "beskrivelse", "02.02.02", "En person"));
 
-            filmListe.add(new Film("ShawHank Redemtion", random, "beskrivelse", "02.02.02", "En person"));
+            filmListe.add(new Film("Saving private Ryan (1998)", "170 min", "Beskrivelse", "dato", "En person"));
 
-            filmListe.add(new Film("Saving private Ryan", random, "Beskrivelse", "dato", "En person"));
-
+            return filmListe;
 
         }
+
+
 }
 
 

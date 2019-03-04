@@ -4,7 +4,7 @@ import java.util.ArrayList;
 
 public abstract class Produksjon {
     private String tittel;
-    private double spilleTid;
+    private String spilleTid;
     private String beskrivelse;
     private String utgivelsesDato;
     private Person regisør;
@@ -12,7 +12,7 @@ public abstract class Produksjon {
 
 
 
-    public Produksjon(String tittel, double spilleTid, String beskrivelse, String utgivelsesDato, Person regisør) {
+    public Produksjon(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, Person regisør) {
         this.tittel = tittel;
         this.spilleTid = spilleTid;
         this.beskrivelse = beskrivelse;
@@ -42,11 +42,11 @@ public abstract class Produksjon {
         this.tittel = tittel;
     }
 
-    public double getSpilleTid() {
+    public String getSpilleTid() {
         return spilleTid;
     }
 
-    public void setSpilleTid(double spilleTid) {
+    public void setSpilleTid(String spilleTid) {
         this.spilleTid = spilleTid;
     }
 

@@ -3,7 +3,7 @@ package sample.Model;
 public class Film extends Produksjon implements Comparable<Film>{
 
 
-    public Film(String tittel, double spilleTid, String beskrivelse, String utgivelsesDato, String regisør ) {
+    public Film(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, String regisør ) {
         super(tittel, spilleTid, beskrivelse, utgivelsesDato, regisør);
     }
 
