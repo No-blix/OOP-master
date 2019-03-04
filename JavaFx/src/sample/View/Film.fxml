@@ -16,8 +16,8 @@
       <TextFlow fx:id="beskrivelseTekst" layoutX="273.0" layoutY="60.0" prefHeight="36.0" prefWidth="121.0" />
       <TextFlow fx:id="datoTekst" layoutX="272.0" layoutY="200.0" prefHeight="25.0" prefWidth="121.0" />
       <TextFlow fx:id="spilletidTekst" layoutX="272.0" layoutY="250.0" prefHeight="25.0" prefWidth="121.0" />
-      <Button fx:id="slettKnapp" layoutX="361.0" layoutY="361.0" mnemonicParsing="false" text="Slett" />
-      <Button fx:id="nyKnapp" layoutX="273.0" layoutY="361.0" mnemonicParsing="false" text="Ny" />
-      <Button fx:id="redigerKnapp" layoutX="304.0" layoutY="361.0" mnemonicParsing="false" text="Rediger" AnchorPane.leftAnchor="304.0" AnchorPane.rightAnchor="329.0" />
+      <Button fx:id="slettKnapp" layoutX="642.0" layoutY="376.0" mnemonicParsing="false" text="Slett" />
+      <Button fx:id="nyKnapp" layoutX="281.0" layoutY="374.0" mnemonicParsing="false" text="Ny" />
+      <Button fx:id="redigerKnapp" layoutX="457.0" layoutY="374.0" mnemonicParsing="false" text="Rediger" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="176.0" />
    </children>
 </AnchorPane>

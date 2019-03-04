@@ -15,7 +15,7 @@ public class DataHandler {
     }
 
     public static ObservableList<Film> hentFilmData(Film filmer) {
-        if (filmListe.isEmpty()) {
+        //if (filmListe.isEmpty()) {
             genererFilmData();
 
             return filmListe;
@@ -38,4 +38,4 @@ public class DataHandler {
     }
 
 
-}
+
