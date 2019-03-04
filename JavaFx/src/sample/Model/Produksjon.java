@@ -2,7 +2,7 @@ package sample.Model;
 
 import java.util.ArrayList;
 
-public class Produksjon {
+public abstract class Produksjon {
     private String tittel;
     private double spilleTid;
     private String beskrivelse;
@@ -19,6 +19,9 @@ public class Produksjon {
         this.utgivelsesDato = utgivelsesDato;
         this.regisør = regisør;
 
+    }
+
+    public Produksjon(String tittel, double spilleTid, String beskrivelse, String utgivelsesDato, String regisør) {
     }
 
     public ArrayList<Rolle> getRolle(){

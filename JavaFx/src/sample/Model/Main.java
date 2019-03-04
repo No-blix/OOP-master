@@ -29,9 +29,9 @@ public class Main {
 
         double randTallFilm = random.nextInt(30)+20;
 
-        Film film = new Film("En filmtittel", randTallFilm, "En beskrivelse", "02.02.02", person2);
-        Film film2 = new Film("En ny tittel", randTallFilm, "En ny beskrivelse", "02.03.02,", person1);
-        System.out.println(film);
+       // Film film = new Film("En filmtittel", randTallFilm, "En beskrivelse", "02.02.02", person2);
+       // Film film2 = new Film("En ny tittel", randTallFilm, "En ny beskrivelse", "02.03.02,", person1);
+       // System.out.println(film);
 
 
         for(int k = 1; k<=5;k++){
