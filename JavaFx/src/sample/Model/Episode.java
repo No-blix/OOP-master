@@ -12,7 +12,7 @@ public class Episode extends Produksjon implements Comparable<Episode>{
     }
 
 
-    public Episode(String tittel, double spilleTid, String beskrivelse, String utgivelsesDato, int episodeNummer, int sesong, Person regisør) {
+    public Episode(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, int episodeNummer, int sesong, String regisør) {
         super(tittel, spilleTid, beskrivelse, utgivelsesDato, regisør);
         this.episodeNummer = episodeNummer;
         this.sesong = sesong;
@@ -22,7 +22,7 @@ public class Episode extends Produksjon implements Comparable<Episode>{
         return episodeNummer;
     }
 
-    public Person getRegisør() {
+    public String getRegisør() {
         return super.getRegisør();
     }
 
@@ -37,7 +37,7 @@ public class Episode extends Produksjon implements Comparable<Episode>{
     }
 
 
-    public double getSpilleTid() {
+    public String getSpilleTid() {
         return super.getSpilleTid();
     }
 

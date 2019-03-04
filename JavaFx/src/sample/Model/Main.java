@@ -38,9 +38,9 @@ public class Main {
 
             for(int i= 1; i<=20; i++){
                 double randTall = random.nextInt(30)+20;
-                Episode episode = new Episode("En episodetittel", randTall, "En beskrivelse", "02.02.02", i, k, person1);
-                episoder.add(episode);
-                episode.LeggTilMangeRoller(Roller);
+               // Episode episode = new Episode("En episodetittel", randTall, "En beskrivelse", "02.02.02", i, k, person1);
+               // episoder.add(episode);
+               // episode.LeggTilMangeRoller(Roller);
 
 
 
@@ -56,10 +56,10 @@ public class Main {
         //Lager en ny episode for å sjekke om det regelen om antallsesonger fungerer, endrer du sesongstørrelsen til som er høyere en +1 vil du få error
 
             int randTest = random.nextInt(30)+20;
-            Episode episodeTest1 = new Episode("En ny episodetittel", randTest, "En ny beskrivelse", "02.02.02", 1, 6, person1);
-            Episode episodeTest2 = new Episode("En  ny episodetittel", randTest, "En ny beskrivelse", "02.02.02", 1, 7, person2);
-            tvserie.LeggTilEpisode(episodeTest2);
-            tvserie.LeggTilEpisode(episodeTest1);
+          //  Episode episodeTest1 = new Episode("En ny episodetittel", randTest, "En ny beskrivelse", "02.02.02", 1, 6, person1);
+          //  Episode episodeTest2 = new Episode("En  ny episodetittel", randTest, "En ny beskrivelse", "02.02.02", 1, 7, person2);
+          // tvserie.LeggTilEpisode(episodeTest2);
+          //  tvserie.LeggTilEpisode(episodeTest1);
 
 
 

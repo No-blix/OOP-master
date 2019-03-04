@@ -7,12 +7,12 @@ public abstract class Produksjon {
     private String spilleTid;
     private String beskrivelse;
     private String utgivelsesDato;
-    private Person regisør;
+    private String regisør;
     private ArrayList<Rolle> rolle = new ArrayList<>();
 
 
 
-    public Produksjon(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, Person regisør) {
+    public Produksjon(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, String regisør) {
         this.tittel = tittel;
         this.spilleTid = spilleTid;
         this.beskrivelse = beskrivelse;
@@ -27,7 +27,7 @@ public abstract class Produksjon {
     public ArrayList<Rolle> getRolle(){
         return rolle;
     }
-    public Person getRegisør(){
+    public String getRegisør(){
         return regisør;
     }
     public void setRegisør(){

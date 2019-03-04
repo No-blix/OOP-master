@@ -23,12 +23,11 @@ public class Tvserie implements Comparable<Tvserie>{
         this.tittel = tittel;
         this.episodeListe = episodeListe;
         double tot = 0;
-        for(Episode ep : episodeListe) {
+      /*  for(Episode ep : episodeListe) {
             tot += ep.getSpilleTid();
         }
         this.gjennomsnittligSpilletid = tot / episodeListe.size();
-        this.antallSesonger = antallSesonger;
-
+        this.antallSesonger = antallSesonger;*/
 
 
     }

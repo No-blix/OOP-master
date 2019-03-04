@@ -7,7 +7,7 @@ public class Film extends Produksjon implements Comparable<Film>{
         super(tittel, spilleTid, beskrivelse, utgivelsesDato, regisør);
     }
 
-    public Person getRegisør() {
+    public String getRegisør() {
         return super.getRegisør();
     }
 
@@ -22,7 +22,7 @@ public class Film extends Produksjon implements Comparable<Film>{
     }
 
 
-    public double getSpilleTid() {
+    public String getSpilleTid() {
         return super.getSpilleTid();
     }
 
