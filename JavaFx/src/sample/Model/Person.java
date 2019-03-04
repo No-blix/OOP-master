@@ -7,7 +7,7 @@ public class Person {
 
 
 
-    public Person(String navn, String etterNavn, String alder, String regFor) {
+    public Person(String navn, String etterNavn, int alder, String regFor) {
         this.navn = navn;
         this.etterNavn = etterNavn;
         this.alder = alder;

@@ -57,14 +57,14 @@ public class Main {
 
             int randTest = random.nextInt(30)+20;
             Episode episodeTest1 = new Episode("En ny episodetittel", randTest, "En ny beskrivelse", "02.02.02", 1, 6, person1);
-            //Episode episodeTest2 = new Episode("En  ny episodetittel", randTest, "En ny beskrivelse", "02.02.02", 1, 7, person2);
-           // tvserie.LeggTilEpisode(episodeTest2);
+            Episode episodeTest2 = new Episode("En  ny episodetittel", randTest, "En ny beskrivelse", "02.02.02", 1, 7, person2);
+            tvserie.LeggTilEpisode(episodeTest2);
             tvserie.LeggTilEpisode(episodeTest1);
 
 
 
 
-            episodeTest1.LeggTilMangeRoller(Roller);
+            //episodeTest1.LeggTilMangeRoller(Roller);
 
 
 
