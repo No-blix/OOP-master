@@ -1,6 +1,7 @@
 package sample.Controller;
 
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableArray;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -20,7 +21,7 @@ public class Controller implements Initializable {
 
 
     @FXML
-    private ListView<Film> listeVindu;
+    private ListView<String> listeVindu = new ListView<>();
     @FXML
     private TextField datoVindu;
     @FXML
@@ -44,12 +45,13 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ArrayList<String> tittler = new ArrayList<>();
-        for(Film film: DataHandler.hentFilmData()){
-            tittler.add(film.getTittel());
-        }
-        listeVindu.setItems(tittler);
+        ObservableList<String> filmtittler = FXCollections.observableArrayList();
 
+        for(Film film : DataHandler.hentFilmData()){
+            String filmliste = film.getTittel();
+            filmtittler.add(filmliste);
+        }
+        listeVindu.setItems(filmtittler);
     }
 }
 
