@@ -44,7 +44,7 @@ public class Controller implements Initializable {
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        listeVindu.setItems(DataHandler.hentFilmData().sorted().get(0).getTittel());
+        listeVindu.setItems(DataHandler.hentFilmData());
 
     }
 }
