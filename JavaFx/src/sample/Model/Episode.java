@@ -1,6 +1,6 @@
 package sample.Model;
 
-import java.util.ArrayList;
+import javafx.collections.ObservableList;
 
 public class Episode extends Produksjon implements Comparable<Episode>{
     private int episodeNummer;
@@ -42,7 +42,7 @@ public class Episode extends Produksjon implements Comparable<Episode>{
     }
 
 
-    public String getTittel() {
+    public ObservableList<Film> getTittel() {
         return super.getTittel();
     }
 

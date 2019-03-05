@@ -1,30 +1,51 @@
 package sample.Controller;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
-public class Controller {
+import sample.Data.DataHandler;
+import sample.Model.Film;
+
+import java.net.URL;
+import java.util.ResourceBundle;
+
+
+public class Controller implements Initializable {
 
 
 
     @FXML
-    public ListView listeVindu;
+    private ListView<Film> listeVindu;
     @FXML
-    public TextField datoVindu;
+    private TextField datoVindu;
     @FXML
-    public TextArea beskrivelseVindu;
+    private TextArea beskrivelseVindu;
     @FXML
-    public TextField spilletidVindu;
+    private TextField spilletidVindu;
 
 
+
     @FXML
-    public void slettKnapp(ActionEvent actionEvent) {
+    private void slettKnapp(ActionEvent actionEvent) {
     }
     @FXML
-    public void nyKnapp(ActionEvent actionEvent) {
+    private void nyKnapp(ActionEvent actionEvent) {
     }
     @FXML
-    public void redigerKnapp(ActionEvent actionEvent) {
+    private void redigerKnapp(ActionEvent actionEvent) {
+    }
+
+
+
+    @Override
+    public void initialize(URL url, ResourceBundle resourceBundle) {
+
+        listeVindu.setItems(DataHandler.hentFilmData().sorted().get(0).getTittel());
+
     }
 }
+

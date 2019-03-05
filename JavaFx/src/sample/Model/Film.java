@@ -1,11 +1,14 @@
 package sample.Model;
 
-public class Film extends Produksjon implements Comparable<Film>{
+
+
+public class Film extends Produksjon implements Comparable<Film> {
 
 
     public Film(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, String regisør ) {
         super(tittel, spilleTid, beskrivelse, utgivelsesDato, regisør);
     }
+    public String getTittel(){return super.getTittel();}
 
     public String getRegisør() {
         return super.getRegisør();
@@ -27,9 +30,9 @@ public class Film extends Produksjon implements Comparable<Film>{
     }
 
 
-    public String getTittel() {
-        return super.getTittel();
-    }
+
+
+
 
     @Override
     public String toString(){
@@ -38,7 +41,7 @@ public class Film extends Produksjon implements Comparable<Film>{
     }
 
     @Override
-    public int compareTo(Film filmTittel) {
-        return this.getTittel().toLowerCase().compareTo(filmTittel.getTittel().toLowerCase());
+    public int compareTo(Film tittelForskjell) {
+        return this.getTittel().toLowerCase().compareTo(tittelForskjell.getTittel().toLowerCase());
     }
 }

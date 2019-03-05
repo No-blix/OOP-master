@@ -1,5 +1,7 @@
 package sample.Model;
 
+import javafx.collections.ObservableList;
+
 import java.util.ArrayList;
 
 public abstract class Produksjon {
@@ -34,9 +36,7 @@ public abstract class Produksjon {
         this.regisør = regisør;
     }
 
-    public String getTittel() {
-        return tittel;
-    }
+    public String getTittel(){return tittel;}
 
     public void setTittel(String tittel) {
         this.tittel = tittel;
@@ -71,5 +71,7 @@ public abstract class Produksjon {
     public void LeggTilMangeRoller(ArrayList<Rolle> flereRoller){
         rolle.addAll(flereRoller);
     }
+
+
 
 }
