@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 
+import javafx.scene.input.MouseEvent;
 import sample.Data.DataHandler;
 import sample.Model.Film;
 
@@ -39,6 +40,10 @@ public class Controller implements Initializable {
     @FXML
     private void redigerKnapp(ActionEvent actionEvent) {
     }
+    public void velgFilmBeskrivelse(MouseEvent mouseEvent) {
+    }
+
+
 
 
 
