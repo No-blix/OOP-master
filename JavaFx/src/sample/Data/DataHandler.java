@@ -4,6 +4,8 @@ import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import sample.Model.Film;
 
+import java.util.ArrayList;
+
 public class DataHandler {
 
     private final static ObservableList<Film> filmListe = FXCollections.observableArrayList();
@@ -16,7 +18,6 @@ public class DataHandler {
     public static ObservableList<Film> hentFilmData() {
         if(filmListe.isEmpty()){
             genererFilmData();}
-
             return filmListe;
 
         }
@@ -30,6 +31,8 @@ public class DataHandler {
             filmListe.add(new Film("Saving private Ryan (1998)", "170 min", "Beskrivelse", "dato", "En person"));
 
         }
+
+
 
 
 

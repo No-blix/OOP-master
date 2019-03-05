@@ -11,6 +11,7 @@ import sample.Data.DataHandler;
 import sample.Model.Film;
 
 import java.net.URL;
+import java.util.ArrayList;
 import java.util.ResourceBundle;
 
 
@@ -26,7 +27,6 @@ public class Controller implements Initializable {
     private TextArea beskrivelseVindu;
     @FXML
     private TextField spilletidVindu;
-
 
 
     @FXML
@@ -45,7 +45,6 @@ public class Controller implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         listeVindu.setItems(DataHandler.hentFilmData());
-
     }
 }
 

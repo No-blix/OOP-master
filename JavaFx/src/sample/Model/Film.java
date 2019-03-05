@@ -1,6 +1,7 @@
 package sample.Model;
 
 
+import java.util.ArrayList;
 
 public class Film extends Produksjon implements Comparable<Film> {
 
