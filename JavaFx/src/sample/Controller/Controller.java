@@ -31,6 +31,7 @@ public class Controller implements Initializable {
     private TextField spilletidVindu;
 
 
+
     @FXML
     private void slettKnapp(ActionEvent actionEvent) {
     }
@@ -40,12 +41,6 @@ public class Controller implements Initializable {
     @FXML
     private void redigerKnapp(ActionEvent actionEvent) {
     }
-    public void velgFilmBeskrivelse(MouseEvent mouseEvent) {
-    }
-
-
-
-
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
@@ -55,8 +50,35 @@ public class Controller implements Initializable {
         for(Film film : DataHandler.hentFilmData()){
             String filmliste = film.getTittel();
             filmtittler.add(filmliste);
+
+
         }
         listeVindu.setItems(filmtittler);
+
+    }
+    public void klikkinfo(MouseEvent mouseEvent) {
+
+
+        ObservableList<Film> infoKapsel = FXCollections.observableArrayList();
+        for (Film info : DataHandler.hentFilmData()) {
+            String filmBeskrivelse = info.getBeskrivelse();
+            String filmDato = info.getUtgivelsesDato();
+            String filmSpilleTid = info.getSpilleTid();
+
+           if(infoKapsel.size()==0){
+               filmBeskrivelse.indexOf(0);
+               filmDato.indexOf(0);
+               filmSpilleTid.indexOf(0);
+           }
+           else if(infoKapsel.size()==1){
+               filmBeskrivelse.indexOf(1);
+               filmDato.indexOf(1);
+               filmSpilleTid.indexOf(1);
+           }
+            beskrivelseVindu.setText(filmBeskrivelse);
+
+        }
+
     }
 }
 

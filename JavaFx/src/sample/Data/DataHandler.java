@@ -26,9 +26,9 @@ public class DataHandler {
         private static void genererFilmData() {
 
 
-            filmListe.add(new Film("Shawshank Redemtion (1995)", "142 min", "beskrivelse", "02.02.02", "En person"));
+            filmListe.add(new Film("Shawshank Redemtion (1995)", "142 min", "Beskrivelse for film 1", "02.02.02", "En person"));
 
-            filmListe.add(new Film("Saving private Ryan (1998)", "170 min", "Beskrivelse", "dato", "En person"));
+            filmListe.add(new Film("Saving private Ryan (1998)", "170 min", "Beskrivelse for film 2", "dato", "En person"));
 
         }
 

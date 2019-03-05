@@ -10,7 +10,7 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="700.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller">
    <children>
-      <ListView fx:id="listeVindu" onMouseClicked="#velgFilmBeskrivelse" prefHeight="400.0" prefWidth="273.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="2.0" />
+      <ListView fx:id="listeVindu" onMouseClicked="#klikkinfo" prefHeight="400.0" prefWidth="273.0" AnchorPane.bottomAnchor="2.0" AnchorPane.leftAnchor="2.0" AnchorPane.rightAnchor="417.0" AnchorPane.topAnchor="2.0" />
       <TextField fx:id="datoVindu" layoutX="403.0" layoutY="188.0" prefHeight="25.0" prefWidth="273.0" AnchorPane.topAnchor="200.0" />
       <TextArea fx:id="beskrivelseVindu" layoutX="403.0" layoutY="14.0" prefHeight="139.0" prefWidth="273.0" />
       <TextField fx:id="spilletidVindu" layoutX="403.0" layoutY="263.0" prefHeight="25.0" prefWidth="273.0" AnchorPane.topAnchor="250.0" />
