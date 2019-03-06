@@ -55,29 +55,28 @@ public class Controller implements Initializable {
         }
         listeVindu.setItems(filmtittler);
 
+
     }
-    public void klikkinfo(MouseEvent mouseEvent) {
+    public void klikkinfo(MouseEvent filmtittler) {
+        ObservableList<String> infoKapsel = FXCollections.observableArrayList();
+
+        for(Film info : DataHandler.hentFilmData()){
+            String filmInfo = info.toString();
 
 
-        ObservableList<Film> infoKapsel = FXCollections.observableArrayList();
-        for (Film info : DataHandler.hentFilmData()) {
-            String filmBeskrivelse = info.getBeskrivelse();
-            String filmDato = info.getUtgivelsesDato();
-            String filmSpilleTid = info.getSpilleTid();
 
-           if(infoKapsel.size()==0){
-               filmBeskrivelse.indexOf(0);
-               filmDato.indexOf(0);
-               filmSpilleTid.indexOf(0);
-           }
-           else if(infoKapsel.size()==1){
-               filmBeskrivelse.indexOf(1);
-               filmDato.indexOf(1);
-               filmSpilleTid.indexOf(1);
-           }
-            beskrivelseVindu.setText(filmBeskrivelse);
+
+            beskrivelseVindu.setText(filmInfo);
+
+
+
+
+
 
         }
+
+
+
 
     }
 }
