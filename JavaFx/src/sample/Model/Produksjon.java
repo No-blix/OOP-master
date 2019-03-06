@@ -1,5 +1,8 @@
 package sample.Model;
 
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
+
 import java.util.ArrayList;
 
 public abstract class Produksjon {

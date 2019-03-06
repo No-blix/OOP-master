@@ -1,28 +1,23 @@
 package sample.Controller;
-
-import javafx.collections.FXCollections;
-import javafx.collections.ObservableArray;
-import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
-
 import javafx.scene.input.MouseEvent;
 import sample.Data.DataHandler;
 import sample.Model.Film;
-
+import java.io.IOException;
 import java.net.URL;
-import java.util.ArrayList;
 import java.util.ResourceBundle;
+
+
 
 
 public class Controller implements Initializable {
 
 
-
     @FXML
-    private ListView<String> listeVindu = new ListView<>();
+    private ListView<Film> listeVindu;
     @FXML
     private TextField datoVindu;
     @FXML
@@ -32,52 +27,34 @@ public class Controller implements Initializable {
 
 
 
+
     @FXML
     private void slettKnapp(ActionEvent actionEvent) {
     }
     @FXML
     private void nyKnapp(ActionEvent actionEvent) {
     }
-    @FXML
-    private void redigerKnapp(ActionEvent actionEvent) {
-    }
+
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
-        ObservableList<String> filmtittler = FXCollections.observableArrayList();
-
-        for(Film film : DataHandler.hentFilmData()){
-            String filmliste = film.getTittel();
-            filmtittler.add(filmliste);
-
-
-        }
-        listeVindu.setItems(filmtittler);
-
+        listeVindu.setItems(DataHandler.hentFilmData());
 
     }
-    public void klikkinfo(MouseEvent filmtittler) {
-        ObservableList<String> infoKapsel = FXCollections.observableArrayList();
+    @FXML
+    public void klikkInfo(MouseEvent mouseEvent) {
+        Film filmValgt = listeVindu.getSelectionModel().getSelectedItem();
 
-        for(Film info : DataHandler.hentFilmData()){
-            String filmInfo = info.toString();
+                datoVindu.setText(filmValgt.getUtgivelsesDato());
+                beskrivelseVindu.setText(filmValgt.getBeskrivelse());
+                spilletidVindu.setText(filmValgt.getSpilleTid());
 
-
-
-
-            beskrivelseVindu.setText(filmInfo);
-
-
-
-
-
-
-        }
-
-
-
+    }
+    @FXML
+    private void redigerKnapp(ActionEvent actionEvent) {
 
     }
 }
+
 

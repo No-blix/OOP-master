@@ -1,7 +1,8 @@
 package sample.Model;
 
 
-import java.util.ArrayList;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 
 public class Film extends Produksjon implements Comparable<Film> {
 
@@ -37,8 +38,8 @@ public class Film extends Produksjon implements Comparable<Film> {
 
     @Override
     public String toString(){
-        return ("Tittel: " + super.getTittel() + "\n" + "Spilletid: " + super.getSpilleTid() + " min" + "\n" + "Beskrivelse: " + super.getBeskrivelse() +
-                "\n" + "Utgivelsesdato: " + super.getUtgivelsesDato() + "\n" + "Regisør: " + super.getRegisør());
+        return (super.getTittel());
+        //+ "\n" + "Spilletid: " + super.getSpilleTid() + " min" + "\n" + "Beskrivelse: " + super.getBeskrivelse() + "\n" + "Utgivelsesdato: " + super.getUtgivelsesDato() + "\n" + "Regisør: " + super.getRegisør());
     }
 
     @Override
