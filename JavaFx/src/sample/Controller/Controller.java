@@ -1,9 +1,13 @@
 package sample.Controller;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import sample.Data.DataHandler;
 import sample.Model.Film;
 import java.io.IOException;
@@ -14,8 +18,6 @@ import java.util.ResourceBundle;
 
 
 public class Controller implements Initializable {
-
-
     @FXML
     private ListView<Film> listeVindu;
     @FXML
@@ -24,7 +26,6 @@ public class Controller implements Initializable {
     private TextArea beskrivelseVindu;
     @FXML
     private TextField spilletidVindu;
-
 
 
 
@@ -42,7 +43,7 @@ public class Controller implements Initializable {
         listeVindu.setItems(DataHandler.hentFilmData());
 
     }
-    @FXML
+   @FXML
     public void klikkInfo(MouseEvent mouseEvent) {
         Film filmValgt = listeVindu.getSelectionModel().getSelectedItem();
 
@@ -52,7 +53,30 @@ public class Controller implements Initializable {
 
     }
     @FXML
-    private void redigerKnapp(ActionEvent actionEvent) {
+    private void redigerKnapp(ActionEvent actionEvent) throws IOException {
+        FXMLLoader nyttVindu = new FXMLLoader();
+
+        nyttVindu.setLocation(getClass().getResource("HåndtereFilm.fxml"));
+
+        Parent hovedLayout = nyttVindu.load();
+
+        Scene scene = new Scene(hovedLayout);
+
+        Stage stage = new Stage();
+
+        stage.setScene(scene);
+
+        stage.showAndWait();
+
+
+
+
+
+
+
+
+
+
 
     }
 }
