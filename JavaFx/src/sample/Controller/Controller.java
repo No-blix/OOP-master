@@ -66,6 +66,8 @@ public class Controller implements Initializable {
                 valgtFilm = nyFilm;
             }
         });
+
+
     }
 
     public void gaaTilNyttVindu(ActionEvent event) throws IOException {
@@ -86,6 +88,7 @@ public class Controller implements Initializable {
             stage.initModality(Modality.WINDOW_MODAL);
             stage.setScene(scene);
             stage.showAndWait();
+
         }
         catch (IOException ioe) {
             System.out.println(ioe.getMessage());
@@ -93,6 +96,8 @@ public class Controller implements Initializable {
 
 
     }
+
+
 
     public void fyllUtInnhold(Film enFilm){
         if(enFilm != null){

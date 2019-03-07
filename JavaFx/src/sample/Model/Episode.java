@@ -1,8 +1,5 @@
 package sample.Model;
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-
 public class Episode extends Produksjon implements Comparable<Episode>{
     private int episodeNummer;
     private int sesong;

@@ -1,9 +1,6 @@
 package sample.Model;
 
 
-import javafx.event.ActionEvent;
-import javafx.event.EventHandler;
-
 public class Film extends Produksjon implements Comparable<Film> {
 
 

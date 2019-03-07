@@ -6,6 +6,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
+import sample.Controller.ManipulerFilmController;
 import sample.Data.DataHandler;
 
 
@@ -33,7 +34,6 @@ public class MainJavaFx extends Application {
             FXMLLoader fxmlLoader = new FXMLLoader();
             fxmlLoader.setLocation(getClass().getResource("film.fxml"));
             Parent nyttvindu = fxmlLoader.load();
-
 
             primaryStage.setTitle("Filmer");
             primaryStage.setScene(new Scene(nyttvindu, 700, 400));
