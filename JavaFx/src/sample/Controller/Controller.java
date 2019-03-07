@@ -6,6 +6,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.*;
 import javafx.scene.input.MouseEvent;
+import javafx.stage.Stage;
 import sample.Data.DataHandler;
 import sample.Model.Film;
 import sample.View.MainJavaFx;
@@ -27,6 +28,7 @@ public class Controller implements Initializable {
     private TextArea beskrivelseVindu;
     @FXML
     private TextField spilletidVindu;
+    private int filmIndex;
 
 
     @FXML
@@ -49,14 +51,15 @@ public class Controller implements Initializable {
         beskrivelseVindu.setText(filmValgt.getBeskrivelse());
         spilletidVindu.setText(filmValgt.getSpilleTid());
 
+
+
+
+
     }
     @FXML
     private void redigerKnapp(ActionEvent actionEvent) throws IOException {
         MainJavaFx main = MainJavaFx.getInstance();
         main.gaaTilNyttVindu();
-
-        Film nyFilm = (Film) listeVindu.getSelectionModel().getSelectedItem();
-
 
     }
 }

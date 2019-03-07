@@ -40,7 +40,6 @@ public class MainJavaFx extends Application {
             primaryStage.setScene(new Scene(nyttvindu, 700, 400));
             primaryStage.show();
 
-            // Film tittel rad
 
             TableColumn<DataHandler, String> tittelRad = new TableColumn<>("tittel");
             tittelRad.setMinWidth(200);
@@ -58,6 +57,7 @@ public class MainJavaFx extends Application {
             Parent nyttvindu = fxmlLoader.load();
             Scene scene = new Scene(nyttvindu);
             Stage stage = new Stage();
+
 
             stage.initModality(Modality.WINDOW_MODAL);
             stage.initOwner(primaryStage);
