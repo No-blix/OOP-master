@@ -1,11 +1,17 @@
 package sample.Controller;
 
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
+import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Parent;
+import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import sample.Data.DataHandler;
 import sample.Model.Film;
@@ -21,14 +27,22 @@ public class Controller implements Initializable {
 
 
     @FXML
-    private ListView listeVindu;
+    private ListView<Film> listeVindu;
     @FXML
     private TextField datoVindu;
     @FXML
     private TextArea beskrivelseVindu;
     @FXML
     private TextField spilletidVindu;
-    private int filmIndex;
+    @FXML
+    private Label tittelVindu;
+
+    private ObservableList<Film> filmListe;
+
+    private Film valgtFilm;
+
+    private int Index;
+
 
 
     @FXML
@@ -38,29 +52,55 @@ public class Controller implements Initializable {
     private void nyKnapp(ActionEvent actionEvent) {
     }
 
+
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listeVindu.setItems(DataHandler.hentFilmData());
+        filmListe = DataHandler.hentFilmData();
+        fyllUtInnhold(filmListe.get(0));
+
+        listeVindu.getSelectionModel().selectedItemProperty().addListener(new ChangeListener<Film>() {
+            @Override
+            public void changed(ObservableValue<? extends Film> observableValue, Film gammelFilm, Film nyFilm) {
+                fyllUtInnhold(nyFilm);
+                valgtFilm = nyFilm;
+            }
+        });
+    }
+
+    public void gaaTilNyttVindu(ActionEvent event) throws IOException {
+        try {
+            FXMLLoader fxmlLoader = new FXMLLoader();
+
+
+            fxmlLoader.setLocation(MainJavaFx.class.getResource("../View/manipulerFilm.fxml"));
+            Parent nyttvindu = fxmlLoader.load();
+
+
+            ManipulerFilmController manipulerFilmController = fxmlLoader.getController();
+            manipulerFilmController.fyllInnInnholdet(tittelVindu.getText(), beskrivelseVindu.getText(), datoVindu.getText(), spilletidVindu.getText(), listeVindu.getSelectionModel().getSelectedIndex());
+
+
+            Scene scene = new Scene(nyttvindu);
+            Stage stage = new Stage();
+            stage.initModality(Modality.WINDOW_MODAL);
+            stage.setScene(scene);
+            stage.showAndWait();
+        }
+        catch (IOException ioe) {
+            System.out.println(ioe.getMessage());
+        }
+
 
     }
 
-    public void klikkInfo(MouseEvent mouseEvent) {
-        Film filmValgt = (Film) listeVindu.getSelectionModel().getSelectedItem();
-
-        datoVindu.setText(filmValgt.getBeskrivelse());
-        beskrivelseVindu.setText(filmValgt.getBeskrivelse());
-        spilletidVindu.setText(filmValgt.getSpilleTid());
-
-
-
-
-
-    }
-    @FXML
-    private void redigerKnapp(ActionEvent actionEvent) throws IOException {
-        MainJavaFx main = MainJavaFx.getInstance();
-        main.gaaTilNyttVindu();
-
+    public void fyllUtInnhold(Film enFilm){
+        if(enFilm != null){
+            beskrivelseVindu.setText(enFilm.getBeskrivelse());
+            datoVindu.setText(enFilm.getUtgivelsesDato());
+            spilletidVindu.setText(enFilm.getSpilleTid());
+            tittelVindu.setText(enFilm.getTittel());
+        }
     }
 }
 
