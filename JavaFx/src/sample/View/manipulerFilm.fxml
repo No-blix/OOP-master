@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Font?>
 
-
 <AnchorPane prefHeight="267.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ManipulerFilmController">
    <children>
-      <TextArea layoutX="386.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
+      <TextArea fx:id="nyBeskrivelse" layoutX="386.0" layoutY="14.0" prefHeight="200.0" prefWidth="200.0" />
       <VBox alignment="CENTER" layoutX="78.0" layoutY="14.0" prefHeight="200.0" prefWidth="162.0" spacing="10.0">
          <children>
             <Label text="FIlm tittel: ">
@@ -19,19 +18,19 @@
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField />
+            <TextField fx:id="nyTittel" />
             <Label text="Dato:">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField />
+            <TextField fx:id="nyDato" />
             <Label text="Spilletid: ">
                <font>
                   <Font size="14.0" />
                </font>
             </Label>
-            <TextField />
+            <TextField fx:id="nySpilletid" />
          </children>
       </VBox>
       <Label layoutX="300.0" layoutY="14.0" text="Beskrivelse:">
