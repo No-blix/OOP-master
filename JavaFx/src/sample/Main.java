@@ -1,4 +1,9 @@
-package sample.Model;
+package sample;
+import sample.Model.Episode;
+import sample.Model.Person;
+import sample.Model.Rolle;
+import sample.Model.Tvserie;
+
 import java.util.ArrayList;
 import java.util.Random;
 

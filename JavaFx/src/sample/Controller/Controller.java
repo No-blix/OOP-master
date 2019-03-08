@@ -42,7 +42,7 @@ public class Controller implements Initializable {
 
     private static int index;
 
-
+    // Henter ut dataen fra Datahandler til brukergrensesnittet
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) {
         listeVindu.setItems(DataHandler.hentFilmData());
@@ -66,7 +66,7 @@ public class Controller implements Initializable {
         });
     }
 
-
+    // aktivering av redigerknappen fra hovedvindu til nyttvindu
     public void gaaTilNyttVindu(ActionEvent event) {
         index = listeVindu.getSelectionModel().getSelectedIndex();
         try {
@@ -85,8 +85,7 @@ public class Controller implements Initializable {
 
             Scene scene = new Scene(nyttvindu);
             Stage stage = new Stage();
-            stage.initModality(Modality.WINDOW_MODAL);
-            //stage.initOwner(primaryStage);
+            stage.initModality(Modality.WINDOW_MODAL);;
             stage.setScene(scene);
             stage.showAndWait();
             //stage.show();
@@ -98,7 +97,7 @@ public class Controller implements Initializable {
 
 
     }
-
+    // henter den nye knappen, og lager en ny scene
     public void nyKnappTrykket() {
         FXMLLoader fxmlInnlaster = new FXMLLoader();
         fxmlInnlaster.setLocation(getClass().getResource("../View/nyFilm.fxml"));
@@ -141,12 +140,12 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
+    //Sletter film fra listview
     public void slettFilm(){
         listeVindu.getItems().remove(listeVindu.getSelectionModel().getSelectedItem());
     }
 
-
+    // Endrer hvilken film som er i listen
     public void endreFilmListe(Film film) {
             filmListe.set(index,film);
 
@@ -163,16 +162,5 @@ public class Controller implements Initializable {
             e.printStackTrace();
         }
     }
-
-
-    /*public void fyllUtInnhold(Film enFilm){
-        if(enFilm != null){
-            beskrivelseVindu.setText(enFilm.getBeskrivelse());
-            datoVindu.setText(enFilm.getUtgivelsesDato());
-            spilletidVindu.setText(enFilm.getSpilleTid());
-            tittelVindu.setText(enFilm.getTittel());
-            System.out.println(index);
-        }
-    }*/
 }
 

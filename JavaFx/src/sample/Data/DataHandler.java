@@ -15,7 +15,7 @@ public class DataHandler {
 
         return filmListe;
     }
-
+    // lager noen nye objekter som er basert på parameterne fra film klassen
     private static void genererFilmData() {
 
 
@@ -30,7 +30,7 @@ public class DataHandler {
                 " menig fra den amerikanske 101st Airborne Division. Denne soldaten er menig James Francis Ryan fra Iowa i USA.", "9. oktober 1998", "En person"));
 
     }
-
+        // legger til et nytt filmObjekt
     public static void leggTilFilm(Film film) {
         filmListe.add(film);
     }

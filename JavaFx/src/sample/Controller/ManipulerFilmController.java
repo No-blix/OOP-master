@@ -27,14 +27,14 @@ public class ManipulerFilmController  {
     @FXML
     private Button redigerKnapp;
 
-
+        // Lager en index for å telleopp hvilken film som er valgt fra listview
     public int Index;
 
     private ObservableList<Film> nyttInnhold;
 
 
 
-
+    // Henter ut redigerknappen
     public void initialize(){
 
        redigerKnapp.setOnAction(e -> redigerKnappKlikket());
@@ -47,7 +47,7 @@ public class ManipulerFilmController  {
         denne.close();
     }
 
-
+    //Lager en metode for redigerknappen når den har blitt klikket
     public void redigerKnappKlikket(){
         Film endretFilm = new Film(nyTittel.getText(),nySpilletid.getText(),nyBeskrivelse.getText(),nyDato.getText());
         System.out.println(endretFilm.getTittel() + endretFilm.getBeskrivelse() +  endretFilm.getUtgivelsesDato());
@@ -70,7 +70,7 @@ public class ManipulerFilmController  {
 
 
 
-
+    // flytter inn identisk innhold fra listen til redigervinduet
     public void fyllInnInnholdet(String filmTittel, String filmBeskrivelse, String filmDato, String filmSpilleTid){
         this.nyBeskrivelse.setText(filmBeskrivelse);
         this.nyTittel.setText(filmTittel);
