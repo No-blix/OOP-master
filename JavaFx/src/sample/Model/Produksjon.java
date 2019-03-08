@@ -21,7 +21,11 @@ public abstract class Produksjon {
 
     }
 
-    public Produksjon(String tittel, double spilleTid, String beskrivelse, String utgivelsesDato, String regisør) {
+    public Produksjon(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato) {
+        this.tittel = tittel;
+        this.spilleTid = spilleTid;
+        this.beskrivelse = beskrivelse;
+        this.utgivelsesDato = utgivelsesDato;
     }
 
     public ArrayList<Rolle> getRolle(){

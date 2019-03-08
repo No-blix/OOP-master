@@ -6,7 +6,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
-import sample.Controller.ManipulerFilmController;
 import sample.Data.DataHandler;
 
 
@@ -19,7 +18,7 @@ public class MainJavaFx extends Application {
         applikasjon = this;
     }
     private static MainJavaFx applikasjon;
-    private Stage primaryStage;
+    public static Stage primaryStage;
 
 
 

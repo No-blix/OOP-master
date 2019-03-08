@@ -14,8 +14,8 @@
       <TextField fx:id="datoVindu" layoutX="403.0" layoutY="188.0" prefHeight="25.0" prefWidth="273.0" AnchorPane.topAnchor="200.0" />
       <TextArea fx:id="beskrivelseVindu" layoutX="387.0" layoutY="33.0" prefHeight="139.0" prefWidth="273.0" scrollTop="1.0" wrapText="true" AnchorPane.leftAnchor="387.0" AnchorPane.rightAnchor="8.0" AnchorPane.topAnchor="33.0" />
       <TextField fx:id="spilletidVindu" layoutX="403.0" layoutY="263.0" prefHeight="25.0" prefWidth="273.0" AnchorPane.topAnchor="250.0" />
-      <Button layoutX="646.0" layoutY="374.0" mnemonicParsing="false" onAction="#slettKnapp" text="Slett" />
-      <Button layoutX="302.0" layoutY="374.0" mnemonicParsing="false" onAction="#nyKnapp" text="Ny" />
+      <Button layoutX="646.0" layoutY="374.0" mnemonicParsing="false" onAction="#slettFilm" text="Slett" />
+      <Button layoutX="302.0" layoutY="374.0" mnemonicParsing="false" text="Ny" onAction="#nyKnappTrykket" />
       <Button layoutX="457.0" layoutY="374.0" mnemonicParsing="false" onAction="#gaaTilNyttVindu" text="Rediger" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="176.0" />
       <Label layoutX="288.0" layoutY="75.0" text="Beskrivelse">
          <font>

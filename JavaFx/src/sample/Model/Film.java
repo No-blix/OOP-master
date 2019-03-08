@@ -7,6 +7,11 @@ public class Film extends Produksjon implements Comparable<Film> {
     public Film(String tittel, String spilleTid, String beskrivelse, String utgivelsesDato, String regisør ) {
         super(tittel, spilleTid, beskrivelse, utgivelsesDato, regisør);
     }
+
+    public Film(String filmTittel, String filmSpilleTid, String filmBeskrivelse, String filmDato) {
+        super(filmTittel, filmSpilleTid, filmBeskrivelse, filmDato);
+    }
+
     public String getTittel(){return super.getTittel();}
 
     public String getRegisør() {
