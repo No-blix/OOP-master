@@ -3,47 +3,51 @@ package sample.DataHandler;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-import javafx.fxml.FXMLLoader;
-import org.w3c.dom.css.CSSValueList;
 
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileNotFoundException;
+import java.io.FileReader;
 import java.util.Scanner;
+
 
 public class DataHandler {
 
+    private final static ObservableList<String> fileArray = FXCollections.observableArrayList();
 
-    private final static ObservableList<String> listReader = FXCollections.observableArrayList();
-
-    public static ObservableList<String> getListReader(){
-        if(listReader.isEmpty()){
-            GenerateReader();
+    public static ObservableList<String> sendFile(){
+        if(fileArray.isEmpty()){
+            generateFile();
         }
-        return listReader;
+    return fileArray;
     }
 
 
+     static void generateFile() {
 
 
+        String fileLocation;
+        fileLocation = "valutakurser.csv";
 
 
-    public static void GenerateReader(){
-        String fileLocation = "../DataHandler/valutakurser.csv";
-        String inputLine = "";
-        try {
-           Scanner scanner = new Scanner(new BufferedReader(new FileReader(fileLocation)));
+         try {
+             Scanner scanner = new Scanner(new BufferedReader(new FileReader(fileLocation)));
 
-           while (scanner.hasNext()){
-               String data = scanner.next();
+             String inputLine = "";
+             while(scanner.hasNextLine()){
+                 inputLine = scanner.nextLine();
 
-               System.out.println(data);
-           }
+                inputLine.split(",");
+
+                 fileArray.add(inputLine);
 
 
-            } catch (IOException e1) {
-            e1.printStackTrace();
-        }
+             }
+         } catch (FileNotFoundException e) {
+             e.printStackTrace();
+         }
 
-    }
+
+ }
 
 }
 
