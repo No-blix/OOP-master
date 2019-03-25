@@ -1,9 +1,7 @@
 package sample.DataHandler;
-
-
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
-
+import sample.Model.Valuta;
 import java.io.BufferedReader;
 import java.io.FileNotFoundException;
 import java.io.FileReader;
@@ -11,10 +9,13 @@ import java.util.Scanner;
 
 
 public class DataHandler {
+    private String country, countryCode, currencyCode;
+    private double currency;
 
-    private final static ObservableList<String> fileArray = FXCollections.observableArrayList();
 
-    public static ObservableList<String> sendFile(){
+    private final static ObservableList<Valuta> fileArray = FXCollections.observableArrayList();
+
+    public static ObservableList<Valuta> sendFile(){
         if(fileArray.isEmpty()){
             generateFile();
         }
@@ -35,11 +36,11 @@ public class DataHandler {
              String inputLine = "";
              while(scanner.hasNextLine()){
                  inputLine = scanner.nextLine();
+                 inputLine.split(",");
+                 String[] inputLine2 = inputLine.split(";");
+                 Valuta valuta = new Valuta(inputLine2[0], inputLine2[1], inputLine2[2], Double.valueOf(inputLine2[3]));
 
-                inputLine.split(",");
-
-                 fileArray.add(inputLine);
-
+                 fileArray.add(valuta);
 
              }
          } catch (FileNotFoundException e) {

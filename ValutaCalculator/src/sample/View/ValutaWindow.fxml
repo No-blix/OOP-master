@@ -10,11 +10,11 @@
 <?import javafx.scene.paint.Stop?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="450.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8.0.172-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller.ValutaOversiktController">
    <children>
       <ComboBox fx:id="AlfabeticCalculate" layoutX="206.0" layoutY="32.0" prefHeight="25.0" prefWidth="207.0" promptText="Alfabetic ordered countries" />
-      <ComboBox fx:id="CurrencyOptionFirst" layoutX="75.0" layoutY="316.0" prefWidth="150.0" />
-      <ComboBox fx:id="CurrencyOptionSecond" layoutX="375.0" layoutY="316.0" prefWidth="150.0" />
+      <ComboBox fx:id="CurrencyOptionFirst" layoutX="75.0" layoutY="316.0" prefWidth="150.0" promptText="Choose Country" />
+      <ComboBox fx:id="CurrencyOptionSecond" layoutX="375.0" layoutY="316.0" prefWidth="150.0" promptText="Choose Country" />
       <TextField fx:id="AmountFirst" layoutX="76.0" layoutY="376.0" />
       <TextField fx:id="AmountSecond" layoutX="376.0" layoutY="376.0" />
       <Label layoutX="292.0" layoutY="371.0" prefHeight="27.0" prefWidth="13.0" text="=">
