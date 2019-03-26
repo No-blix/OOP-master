@@ -17,13 +17,6 @@ public class Valuta {
         this.valuta = valuta;
     }
 
-    public Valuta(double valuta) {
-        this.valuta = valuta;
-    }
-
-    public Valuta(String countryCode) {
-        this.countryCode = countryCode;
-    }
 
     public double getValuta() {
         return valuta;
@@ -96,5 +89,6 @@ public class Valuta {
         }
         return liste;
     }
+
 }
 

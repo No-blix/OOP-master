@@ -38,6 +38,12 @@ public class ValutaOversiktController implements Initializable {
     private TextField AmountSecond;
     @FXML
     private void CalculateCurrency(ActionEvent actionEvent) {
+        double tallEn = CurrencyOptionFirst.getValue().getValuta() * Double.valueOf(AmountFirst.getText());
+
+        AmountSecond.setText(String.valueOf(tallEn / CurrencyOptionSecond.getValue().getValuta()));
+
+
+
     }
     @FXML
     public void alfabeticOrder(ActionEvent actionEvent) {
@@ -74,25 +80,7 @@ public class ValutaOversiktController implements Initializable {
 
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        AmountFirst.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\d\.")) {
-                    AmountFirst.setText(newValue.replaceAll("[^\d.]", ""));
-                }
-            }
-        });
 
-        AmountSecond.textProperty().addListener(new ChangeListener<String>() {
-            @Override
-            public void changed(ObservableValue<? extends String> observable, String oldValue,
-                                String newValue) {
-                if (!newValue.matches("\d\.")) {
-                    AmountSecond.setText(newValue.replaceAll("[^\d.]", ""));
-                }
-            }
-        });
         AlfabeticCalculate.setItems(sortingList);
 
 

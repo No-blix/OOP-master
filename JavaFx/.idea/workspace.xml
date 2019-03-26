@@ -2,9 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0b599fea-a8db-47d0-a5d3-729da31c9eff" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ValutaCalculator/src/sample/Controller/ValutaOversiktController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ValutaCalculator/src/sample/Controller/ValutaOversiktController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../ValutaCalculator/src/sample/Model/Valuta.java" beforeDir="false" afterPath="$PROJECT_DIR$/../ValutaCalculator/src/sample/Model/Valuta.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../ValutaCalculator/src/sample/View/ValutaWindow.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/../ValutaCalculator/src/sample/View/ValutaWindow.fxml" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -175,7 +175,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553623619133" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1553630159872" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$/../ValutaCalculator" />
     <property name="nodejs_package_manager_path" value="npm" />
     <property name="project.structure.last.edited" value="Modules" />
