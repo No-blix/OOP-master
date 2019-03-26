@@ -1,5 +1,7 @@
 package sample.Controller;
 
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -14,16 +16,16 @@ import javafx.scene.image.ImageView;
 import javafx.util.Callback;
 import sample.DataHandler.DataHandler;
 import sample.Model.Valuta;
+
 import java.net.URL;
 import java.util.ResourceBundle;
-import java.util.Scanner;
 
 
 public class ValutaOversiktController implements Initializable {
     @FXML
-    public ImageView FirstFlag;
+    private ImageView firstFlag;
     @FXML
-    public ImageView SecondFlag;
+    private ImageView secondFlag;
     @FXML
     private ComboBox AlfabeticCalculate;
     @FXML
@@ -35,26 +37,68 @@ public class ValutaOversiktController implements Initializable {
     @FXML
     private TextField AmountSecond;
     @FXML
-    private ListCell<Valuta> valutaListCell = new ListCell<>();
+    private void CalculateCurrency(ActionEvent actionEvent) {
+    }
     @FXML
-    public void CalculateCurrency(ActionEvent actionEvent) {
-
+    public void alfabeticOrder(ActionEvent actionEvent) {
+        int index = AlfabeticCalculate.getSelectionModel().getSelectedIndex();
+        if(index == 0){
+            CurrencyOptionFirst.setItems(Valuta.sortertListen(valutaListe, true));
+            CurrencyOptionSecond.setItems(Valuta.sortertListen(valutaListe, true));
+        }
+        if(index == 1){
+            CurrencyOptionFirst.setItems(Valuta.sortertListen(valutaListe, false));
+            CurrencyOptionSecond.setItems(Valuta.sortertListen(valutaListe, false));
+        }
+        if(index == 2){
+            CurrencyOptionFirst.setItems(Valuta.sorterKode(valutaListe, true));
+            CurrencyOptionSecond.setItems(Valuta.sorterKode(valutaListe, true));
+        }
+        if(index == 3){
+            CurrencyOptionFirst.setItems(Valuta.sorterKode(valutaListe, false));
+            CurrencyOptionSecond.setItems(Valuta.sorterKode(valutaListe, false));
+        }
     }
 
+    @FXML
+    private void comboPickerFirst(ActionEvent actionEvent) {
+      firstFlag.setImage(new Image("https://www.countryflags.io/" + CurrencyOptionFirst.getSelectionModel().getSelectedItem().getCountryCode() + "/shiny/64.png"));
+    }
+    @FXML
+    private void comboPickerSecond(ActionEvent actionEvent) {
+      secondFlag.setImage(new Image("https://www.countryflags.io/" + CurrencyOptionSecond.getSelectionModel().getSelectedItem().getCountryCode() + "/shiny/64.png"));
+    }
+    private ObservableList<String> sortingList = FXCollections.observableArrayList("Land synkende", "Land stigende", "valutakode synkende", "valutakode stigende");
+
+    private static ObservableList<Valuta> valutaListe = FXCollections.observableArrayList(DataHandler.sendFile());
 
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
-        ObservableList<Valuta> valutaListe = FXCollections.observableArrayList(DataHandler.sendFile());
+        AmountFirst.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\d\.")) {
+                    AmountFirst.setText(newValue.replaceAll("[^\d.]", ""));
+                }
+            }
+        });
 
-        Image image = new Image("https://www.countryflags.io/no/flat/64.png");
-
-
+        AmountSecond.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\d\.")) {
+                    AmountSecond.setText(newValue.replaceAll("[^\d.]", ""));
+                }
+            }
+        });
+        AlfabeticCalculate.setItems(sortingList);
 
 
 
         CurrencyOptionFirst.setItems(valutaListe);
         CurrencyOptionSecond.setItems(valutaListe);
-
         CurrencyOptionSecond.setCellFactory(new Callback<ListView<Valuta>, ListCell<Valuta>>() {
             @Override
             public ListCell<Valuta> call(ListView<Valuta> listView) {
@@ -67,7 +111,12 @@ public class ValutaOversiktController implements Initializable {
                 return new valutaCelle();
             }
         });
+        CurrencyOptionFirst.setButtonCell(new valutaCelle());
+        CurrencyOptionSecond.setButtonCell(new valutaCelle());
     }
+
+
+
 
     private static class valutaCelle extends ListCell<Valuta>  {
         @Override
@@ -79,15 +128,10 @@ public class ValutaOversiktController implements Initializable {
             }
             else{
                 setText(enValuta.getCountry() + "-" + enValuta.getCountryCode());
-
-
             }
         }
-
     }
+}
 
-
-
-    }
 
 
