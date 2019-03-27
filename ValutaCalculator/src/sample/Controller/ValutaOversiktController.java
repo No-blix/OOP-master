@@ -17,7 +17,9 @@ import sample.Model.Valuta;
 import java.net.URL;
 import java.util.ResourceBundle;
 
-
+/**
+ *
+ */
 public class ValutaOversiktController implements Initializable {
     @FXML
     private Label errorMessage;
@@ -35,15 +37,21 @@ public class ValutaOversiktController implements Initializable {
     private TextField AmountFirst;
     @FXML
     private TextField AmountSecond;
+
+    /**
+     *
+     * @param actionEvent
+     */
     @FXML
     private void CalculateCurrency(ActionEvent actionEvent) {
+        errorMessage.setText("");
         try {
             double tallEn = CurrencyOptionFirst.getValue().getValuta() * Double.valueOf(AmountFirst.getText());
 
             AmountSecond.setText(String.valueOf(tallEn / CurrencyOptionSecond.getValue().getValuta()));
         }
         catch (NullPointerException e){
-            errorMessage.setText("Invalid number");
+            errorMessage.setText("Choose two currencies");
         }
         catch (NumberFormatException f){
             errorMessage.setText("Invalid number");
@@ -52,6 +60,11 @@ public class ValutaOversiktController implements Initializable {
 
 
     }
+
+    /**
+     *
+     * @param actionEvent
+     */
     @FXML
     public void alfabeticOrder(ActionEvent actionEvent) {
         int index = AlfabeticCalculate.getSelectionModel().getSelectedIndex();
@@ -73,6 +86,10 @@ public class ValutaOversiktController implements Initializable {
         }
     }
 
+    /**
+     *
+     * @param actionEvent
+     */
     @FXML
     private void comboPickerFirst(ActionEvent actionEvent) {
         if(CurrencyOptionFirst.getSelectionModel().getSelectedItem() == null){
@@ -82,6 +99,9 @@ public class ValutaOversiktController implements Initializable {
 
     }
     @FXML
+    /**
+     *
+     */
     private void comboPickerSecond(ActionEvent actionEvent) {
         if(CurrencyOptionSecond.getSelectionModel().getSelectedItem() == null){
             return;
@@ -93,6 +113,11 @@ public class ValutaOversiktController implements Initializable {
 
     private static ObservableList<Valuta> valutaListe = FXCollections.observableArrayList(DataHandler.sendFile());
 
+    /**
+     *
+     * @param url
+     * @param resourceBundle
+     */
     @FXML
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
@@ -136,8 +161,9 @@ public class ValutaOversiktController implements Initializable {
     }
 
 
-
-
+    /**
+     *
+     */
     private static class valutaCelle extends ListCell<Valuta>  {
         @Override
         public void updateItem(Valuta enValuta, boolean empty) {
