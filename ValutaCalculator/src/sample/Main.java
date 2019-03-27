@@ -27,29 +27,5 @@ public class Main extends Application {
         primaryStage.show();
 
         ObservableList<String> arrayListData = FXCollections.observableArrayList();
-
-
-       /* for(int i = 0; i<DataHandler.sendFile().size(); i++){
-            String splittUp = DataHandler.sendFile().get(i);
-
-            String[] currencyInfo = splittUp.split(";");
-
-
-
-            for(int k = 0; k<currencyInfo.length; k++){
-                String info = currencyInfo[k];
-
-                System.out.println(info);
-
-            }
-
-        }*/
-
-
-
-
-
-
-
     }
 }

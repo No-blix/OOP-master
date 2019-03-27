@@ -68,11 +68,19 @@ public class ValutaOversiktController implements Initializable {
 
     @FXML
     private void comboPickerFirst(ActionEvent actionEvent) {
+        if(CurrencyOptionFirst.getSelectionModel().getSelectedItem() == null){
+            return;
+        }
       firstFlag.setImage(new Image("https://www.countryflags.io/" + CurrencyOptionFirst.getSelectionModel().getSelectedItem().getCountryCode() + "/shiny/64.png"));
+
     }
     @FXML
     private void comboPickerSecond(ActionEvent actionEvent) {
+        if(CurrencyOptionSecond.getSelectionModel().getSelectedItem() == null){
+            return;
+        }
       secondFlag.setImage(new Image("https://www.countryflags.io/" + CurrencyOptionSecond.getSelectionModel().getSelectedItem().getCountryCode() + "/shiny/64.png"));
+
     }
     private ObservableList<String> sortingList = FXCollections.observableArrayList("Land synkende", "Land stigende", "valutakode synkende", "valutakode stigende");
 
@@ -82,9 +90,6 @@ public class ValutaOversiktController implements Initializable {
     public void initialize(URL url, ResourceBundle resourceBundle) {
 
         AlfabeticCalculate.setItems(sortingList);
-
-
-
         CurrencyOptionFirst.setItems(valutaListe);
         CurrencyOptionSecond.setItems(valutaListe);
         CurrencyOptionSecond.setCellFactory(new Callback<ListView<Valuta>, ListCell<Valuta>>() {
@@ -101,6 +106,26 @@ public class ValutaOversiktController implements Initializable {
         });
         CurrencyOptionFirst.setButtonCell(new valutaCelle());
         CurrencyOptionSecond.setButtonCell(new valutaCelle());
+
+        AmountFirst.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d\\.")) {
+                    AmountFirst.setText(newValue.replaceAll("[^\\d.]", ""));
+                }
+            }
+        });
+
+        AmountSecond.textProperty().addListener(new ChangeListener<String>() {
+            @Override
+            public void changed(ObservableValue<? extends String> observable, String oldValue,
+                                String newValue) {
+                if (!newValue.matches("\\d\\.")) {
+                    AmountSecond.setText(newValue.replaceAll("[^\\d.]", ""));
+                }
+            }
+        });
     }
 
 
