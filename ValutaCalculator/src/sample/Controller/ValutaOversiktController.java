@@ -7,10 +7,7 @@ import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.ComboBox;
-import javafx.scene.control.ListCell;
-import javafx.scene.control.ListView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.util.Callback;
@@ -22,6 +19,8 @@ import java.util.ResourceBundle;
 
 
 public class ValutaOversiktController implements Initializable {
+    @FXML
+    private Label errorMessage;
     @FXML
     private ImageView firstFlag;
     @FXML
@@ -38,9 +37,17 @@ public class ValutaOversiktController implements Initializable {
     private TextField AmountSecond;
     @FXML
     private void CalculateCurrency(ActionEvent actionEvent) {
-        double tallEn = CurrencyOptionFirst.getValue().getValuta() * Double.valueOf(AmountFirst.getText());
+        try {
+            double tallEn = CurrencyOptionFirst.getValue().getValuta() * Double.valueOf(AmountFirst.getText());
 
-        AmountSecond.setText(String.valueOf(tallEn / CurrencyOptionSecond.getValue().getValuta()));
+            AmountSecond.setText(String.valueOf(tallEn / CurrencyOptionSecond.getValue().getValuta()));
+        }
+        catch (NullPointerException e){
+            errorMessage.setText("Invalid number");
+        }
+        catch (NumberFormatException f){
+            errorMessage.setText("Invalid number");
+        }
 
 
 
